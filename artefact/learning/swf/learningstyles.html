@@ -1,0 +1,70 @@
+<html>
+<body>
+
+<h1>learningstyles.swf</h1>
+
+<p><b>learningstyles.swf</b> is highly customizable flash movie/component for displaying VAK (Visual, Auditory and Kinesthetic type) learning styles piechart.</p>
+
+<p>The <b>FlashVars</b> accepts the folowing variables:
+<ul>
+<li><b>color1</b> which represents the visual style color used in piechart and must be in one of the folowing two formats: <code>#RRGGBB</code> or <code>RRGGBB</code>, where <code>RR</code> stands for red color component, <code>GG</code> stands for green color component and <code>BB</code> stands for blue color component</li>
+<li><b>color2</b> which represents the auditory style color used in piechart and must be in one of the folowing two formats: <code>#RRGGBB</code> or <code>RRGGBB</code>, where <code>RR</code> stands for red color component, <code>GG</code> stands for green color component and <code>BB</code> stands for blue color component</li>
+<li><b>color3</b> which represents the kinesthetic style color used in piechart and must be in one of the folowing two formats: <code>#RRGGBB</code> or <code>RRGGBB</code>, where <code>RR</code> stands for red color component, <code>GG</code> stands for green color component and <code>BB</code> stands for blue color component</li>
+<li><b>values</b> which represents comma separated list of all 3 learning styles values, computed from survey in which person answers to series of statements. Valid values must be between 0 and 360. <u>Remember:</u> The sum of all 3 values must be 360 (as 360° in full circle) - see the example below.</li>
+<li><b>legend</b> which represents comma separated list of 3 values (letters or numbers) which will represent the legend of the piechart - see example below.</li>
+</ul>
+</p>
+
+<h2>Example 1:</h2>
+<code>&lt;param name="flashVars" value="color1=#ff0000&color2=#008000&color3=#0000ff&values=100,120,140&legend=V,S,G" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="learningstyles" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="learningstyles.swf" />
+<param name="flashVars" value="color1=#ff0000&color2=#008000&color3=#0000ff&values=100,120,140&legend=V,S,G" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="learningstyles.swf" flashVars="color1=#ff0000&color2=#008000&color3=#0000ff&values=100,120,140&legend=V,S,G" quality="high" bgcolor="#ffffff" width="220" height="230" name="learningstyles" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<h2>Example 2:</h2>
+...with default graph color
+<br><br><code>&lt;param name="flashVars" value="values=40,120,200&legend=X,Y,Z" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="learningstyles" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="learningstyles.swf" />
+<param name="flashVars" value="values=40,120,200&legend=X,Y,Z" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="learningstyles.swf" flashVars="values=40,120,200&legend=X,Y,Z" quality="high" bgcolor="#ffffff" width="220" height="230" name="learningstyles" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<h2>Example 3:</h2>
+...with default legend and color set without # sign
+<br><br><code>&lt;param name="flashVars" value="color1=#ff8080&color2=#80ff80&color3=#8080ff&values=30,80,250" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="learningstyles" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="learningstyles.swf" />
+<param name="flashVars" value="color1=#ff8080&color2=#80ff80&color3=#8080ff&values=30,80,250" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="learningstyles.swf" flashVars="color1=#ff8080&color2=#80ff80&color3=#8080ff&values=30,80,250" quality="high" bgcolor="#ffffff" width="220" height="230" name="learningstyles" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<h2>Example 4:</h2>
+...one of the values equals 0, all three together equals 360.
+<br><br><code>&lt;param name="flashVars" value="values=45,0,315" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="learningstyles" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="learningstyles.swf" />
+<param name="flashVars" value="values=45,0,315" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="learningstyles.swf" flashVars="values=45,0,315" quality="high" bgcolor="#ffffff" width="220" height="230" name="learningstyles" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<body>
+</html>
