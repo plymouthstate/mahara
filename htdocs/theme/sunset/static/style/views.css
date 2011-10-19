@@ -1,0 +1,41 @@
+/*  Views  */
+/********************** Top pane of Edit View *************************/
+/* The tabs that allow you to select a blocktype category */
+#category-list li a,
+#category-list li a:link,
+#category-list li a:visited,
+#category-list li a:active {
+  color: #fadc8a;
+  background-color: #c66c14;
+  padding: 4px 10px;
+}
+#category-list li.current a,
+#category-list li.current a:link,
+#category-list li.current a:visited,
+#category-list li.current a:active {
+  color: #ffffff;
+  background-color: #8E1901;
+}
+
+/* The panel that contains the blocktype icons */
+#blocktype-list {
+  border: 1px solid #C66C14;
+  background: #f7ece2;
+}
+
+/**************** Blockinstance **********************/
+/* pagination */
+#feedback_pagination {
+	border-top: 1px dotted #8E1901;
+}
+
+.blockinstance-header h4 {
+	border-bottom: 1px dotted #8E1901;
+}
+
+ul.colnav li a {
+    background: transparent url(../images/transparency.png) repeat center center;	
+}
+#collection {
+	color: #eba61b;
+}
