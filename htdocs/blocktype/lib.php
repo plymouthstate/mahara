@@ -576,7 +576,6 @@ class BlockInstance {
      */
     public function render_editing($configure=false, $new=false, $jsreply=false) {
         safe_require('blocktype', $this->get('blocktype'));
-        $js = '';
         $movecontrols = array();
 
         $blocktypeclass = generate_class_name('blocktype', $this->get('blocktype'));
@@ -594,6 +593,8 @@ class BlockInstance {
         else {
             try {
                 $content = call_static_method(generate_class_name('blocktype', $this->get('blocktype')), 'render_instance', $this, true);
+                $jsfiles = call_static_method($blocktypeclass, 'get_instance_javascript', $this);
+                $js = $this->get_get_javascript_javascript($jsfiles);
             }
             catch (NotFoundException $e) {
                 // Whoops - where did the image go? There is possibly a bug 
@@ -605,6 +606,7 @@ class BlockInstance {
                     . 'Original error follows:');
                 log_debug($e->getMessage());
                 $content = '';
+                $js = '';
             }
 
             if (!defined('JSON') && !$jsreply) {
@@ -858,22 +860,7 @@ class BlockInstance {
         }
 
         $configjs = call_static_method($blocktypeclass, 'get_instance_config_javascript', $this);
-        foreach($configjs as &$jsfile) {
-            if(strpos($jsfile, 'http://') === false) {
-                if($this->artefactplugin) {
-                    $jsfile = 'artefact/' . $this->artefactplugin . '/blocktype/' .
-                        $this->blocktype . '/' . $jsfile;
-                }
-                else {
-                    $jsfile = 'blocktype/' . $this->blocktype . '/' . $jsfile;
-                }
-                $jsfile = '$j.getScript("' . get_config('wwwroot') . $jsfile . '");';
-            }
-            else {
-                $jsfile = '$j.getScript("' . $jsfile . '");';
-            }
-        }
-        $js .= implode('', $configjs);
+        $js .= $this->get_get_javascript_javascript($configjs);
 
         $renderedform = array('html' => $html, 'javascript' => $js);
         return $renderedform;
@@ -1227,5 +1214,42 @@ class BlockInstance {
             $this->temp[$key][$id] = call_static_method($blocktypeclass, 'get_instance_' . $key, $id);
         }
         return $this->temp[$key][$id];
+    }
+
+    /**
+     * Returns javascript to grab & eval javascript from files on the web
+     *
+     * @param array $jsfiles Each element of $jsfiles is either a url, a local filename,
+     *                       or an array of the form
+     *                       array(
+     *                           'file'   => string   // url or local js filename
+     *                           'initjs' => string   // js to be executed once the file's
+     *                                                // contents have been loaded
+     *                       )
+     *
+     * @return string
+     */
+    public function get_get_javascript_javascript($jsfiles) {
+        $js = '';
+        foreach ($jsfiles as $jsfile) {
+
+            $file = (is_array($jsfile) && isset($jsfile['file'])) ? $jsfile['file'] : $jsfile;
+
+            if (strpos($file, 'http://') === false) {
+                $file = 'blocktype/' . $this->blocktype . '/' . $file;
+                if ($this->artefactplugin) {
+                    $file = 'artefact/' . $this->artefactplugin . '/' . $file;
+                }
+                $file = get_config('wwwroot') . $file;
+            }
+
+            $js .= '$j.getScript("' . $file . '"';
+            if (is_array($jsfile) && !empty($jsfile['initjs'])) {
+                // Pass success callback to getScript
+                $js .= ', function(data) {' . $jsfile['initjs'] . '}';
+            }
+            $js .= ");\n";
+        }
+        return $js;
     }
 }
