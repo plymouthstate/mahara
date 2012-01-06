@@ -1,0 +1,55 @@
+<html>
+<body>
+
+<h1>multipleintelligences.swf</h1>
+
+<p><b>multipleintelligences.swf</b> is highly customizable flash movie/component for displaying multiple intelligences graph according to Gardner's multiple intelligences theory.</p>
+
+<p>The <b>FlashVars</b> accepts the folowing variables:
+<ul>
+<li><b>color</b> which represents the foreground color used in graph and must be in one of the folowing two formats: <code>#RRGGBB</code> or <code>RRGGBB</code>, where <code>RR</code> stands for red color component, <code>GG</code> stands for green color component and <code>BB</code> stands for blue color component</li>
+<li><b>values</b> which represents comma separated list of all the 8 multiple intelligence values, computed from survey in which person answers to series of statements. Valid values are in range from <code>0</code> to <code>4</code> - see the example below.</li>
+<li><b>legend</b> which represents comma separated list of 8 values (letters or numbers) which will represent the legend of the graph - see example below.</li>
+</ul>
+</p>
+
+<h2>Example 1:</h2>
+<code>&lt;param name="flashVars" value="color=#ff0000&values=2,3,4,3,2,1,2,3&legend=1,2,3,4,5,6,7,8" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="multipleintelligences" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="multipleintelligences.swf" />
+<param name="flashVars" value="color=#ff0000&values=2,3,4,3,2,1,2,3&legend=1,2,3,4,5,6,7,8" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="multipleintelligences.swf" flashVars="color=#ff0000&values=2,3,4,3,2,1,2,3&legend=1,2,3,4,5,6,7,8" quality="high" bgcolor="#ffffff" width="220" height="230" name="multipleintelligences" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<h2>Example 2:</h2>
+...with default graph color
+<br><br><code>&lt;param name="flashVars" value="values=4,3,4,3,2,3,2,3&legend=S,T,U,V,W,X,Y,Z" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="multipleintelligences" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="multipleintelligences.swf" />
+<param name="flashVars" value="values=4,3,4,3,2,3,2,3&legend=S,T,U,V,W,X,Y,Z" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="multipleintelligences.swf" flashVars="values=4,3,4,3,2,3,2,3&legend=S,T,U,V,W,X,Y,Z" quality="high" bgcolor="#ffffff" width="220" height="230" name="multipleintelligences" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<h2>Example 3:</h2>
+...with default legend and color set without # sign
+<br><br><code>&lt;param name="flashVars" value="color=becb94&values=1,2,1,2,1,2,1,2" /&gt;</code>
+<br>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,0,0" width="220" height="230" id="multipleintelligences" align="middle">
+<param name="allowScriptAccess" value="sameDomain" />
+<param name="movie" value="multipleintelligences.swf" />
+<param name="flashVars" value="color=becb94&values=1,2,1,2,1,2,1,2" />
+<param name="quality" value="high" />
+<param name="bgcolor" value="#ffffff" />
+<embed src="multipleintelligences.swf" flashVars="color=becb94&values=1,2,1,2,1,2,1,2" quality="high" bgcolor="#ffffff" width="220" height="230" name="multipleintelligences" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object>
+
+<body>
+</html>
