@@ -3,6 +3,7 @@ htdocs/.project
 htdocs/.projectOptions
 htdocs/.settings/*
 htdocs/.settings
+htdocs/.htaccess
 mahara-*.tar.bz2
 mahara-*.tar.gz
 mahara-*.zip
